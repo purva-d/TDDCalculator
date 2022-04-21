@@ -2,6 +2,14 @@ package com.example.TDDCalculator;
 
 public class Calculator {
 	
+	private int getSum(String[] numbers) {
+		int sum=0;
+		for (String strNum :numbers) {
+			sum += Integer.parseInt(strNum);
+		}
+		return sum;
+	}
+	
 	public int calculate(String input) {
 		String[] numbers = input.split(",");
 		if(input.isEmpty()) {
@@ -11,7 +19,7 @@ public class Calculator {
 			return Integer.parseInt(input.strip());
 		}
 		else {
-			return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
+			return getSum(numbers);
 		}
 		
 	}
